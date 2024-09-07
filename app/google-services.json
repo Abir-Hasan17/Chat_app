@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28063232774",
+    "project_id": "chat-app-d803e",
+    "storage_bucket": "chat-app-d803e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28063232774:android:d86fd58ae5b88730b3e487",
+        "android_client_info": {
+          "package_name": "com.learning.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWGDYYledlIc70Q20En1cXB4bj-A9yX9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
