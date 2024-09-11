@@ -13,12 +13,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.BottomSheetDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -37,7 +34,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
@@ -69,14 +65,14 @@ fun HomeScreen(navController: NavController) {
                 .fillMaxSize()
         ) {
             LazyColumn {
-                items(channels.value){ channel ->
+                items(channels.value) { channel ->
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(10.dp)
-                            .clickable { }
+                            .clickable { navController.navigate("chat/${channel.id}")}
                     ) {
-                        Text(text = channel.name, modifier = Modifier.padding(16.dp))
+                        Text(text = channel.name, modifier = Modifier.padding(16.dp), style = MaterialTheme.typography.bodyMedium)
                     }
                 }
             }
@@ -109,7 +105,11 @@ fun AddChannelDialogue(onAddChannel: (String) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text(text = "Add Channel", fontSize = 20.sp, color = MaterialTheme.colorScheme.primary)
+        Text(
+            text = "Add Channel",
+            color = MaterialTheme.colorScheme.primary,
+            style = MaterialTheme.typography.titleMedium
+        )
         Spacer(modifier = Modifier.size(15.dp))
         OutlinedTextField(
             value = channelName.value,

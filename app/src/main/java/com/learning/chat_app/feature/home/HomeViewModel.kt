@@ -1,6 +1,5 @@
 package com.learning.chat_app.feature.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.database.database
